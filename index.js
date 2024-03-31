@@ -103,6 +103,7 @@ app.get("/library/*", async (req, res) => {
             status: response.status,
             data: responseData,
         };
+        console.log(`Caching ${id}`)
         cache.put(key, cacheData, 30 * 60 * 1000);
     }
 
